@@ -50,5 +50,5 @@ fix：解决项目BUG
 3. 点击左下角同步按钮
 
 # 作者
-- 姓名：Ryane Liu
-- Github：ryanemax
+- 姓名：xinghongxin
+- Github：https://github.com/Angular5Test/hongxin-exam.git

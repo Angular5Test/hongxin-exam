@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { getRandomString } from '../../../node_modules/_@types_selenium-webdriver@2.53.43@@types/selenium-webdriver/safari';
 
 interface User{
   id:number,
@@ -20,7 +21,18 @@ export class StudentListComponent implements OnInit {
   sortUsers(type){
     // 参考MDN中的ES6，Array语法
     // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array
-    console.log("sortUsers Works!");
+if('asc'==type){
+let sortedArr = this.users.sort((a,b)=>a.id < b.id ? -1 : 1);
+console.log(sortedArr);
+}else if('desc'==type){
+  let sortedArr = this.users.sort((a,b)=>a.id < b.id ? 1 : -1);
+  console.log(sortedArr);
+}else if('random'==type){
+  let sortedArr = this.users.sort((a,b)=>Math.random()*a.id < Math.random()*b.id ? 1 : -1);
+  console.log(sortedArr);
+}
+
+  console.log("sortUsers Works!");
   }
   loadUsersData(){
     this.users = [
