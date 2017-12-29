@@ -1,8 +1,41 @@
-<h1>学生列表</h1>
+<h1>实验学校</h1>
 <button (click)="sortUsers('asc')">正序</button>
-<button (click)="sortUsers('desc')" >倒序</button>
+<button (click)="sortUsers('desc')">倒序</button>
 <button (click)="sortUsers('random')">随机</button>
-<button (click)="addNewUser()">新增学生</button>
-<ul>
-  <li *ngFor="let user of users"><span (click)="deleteUserByID(user.id)">[删除]</span> ID:{{user.id}}，姓名：{{user.name}}，Github：{{user.github}}，性别：{{user.sex}}</li>
-</ul>
+<button (click)="addNewUser()">新增老师</button>
+
+<div style="border:3px solid black;">
+  <tr>
+    <td>
+      <span>选择</span>
+    </td>
+    <td>
+      <span>序号</span>
+    </td>
+    <td>
+      <span>姓名</span>
+    </td>
+    <td>
+      <span>性别</span>
+    </td>
+    <td>
+      <span>级别</span>
+    </td>
+  </tr>
+
+  <tr *ngFor="let user of users">
+    <button (click)="deleteUserByID(user.id)">[删除]</button>
+    <td>
+      {{user.id}}
+    </td>
+    <td>
+      {{user.name}}
+    </td>
+    <td>
+      {{user.sex}}
+    </td>
+    <td>
+      {{user.level}}
+    </td>
+  </tr>
+</div>

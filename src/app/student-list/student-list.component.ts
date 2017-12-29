@@ -4,8 +4,8 @@ import { getRandomString } from '../../../node_modules/_@types_selenium-webdrive
 interface User{
   id:number,
   name:string,
-  github:string,
-  sex:string
+  sex:string,
+  level:string
 }
 
 @Component({
@@ -36,18 +36,18 @@ console.log(sortedArr);
   }
   loadUsersData(){
     this.users = [
-      {id:1,name:"Ryane",github:"ryanemax",sex:"male"},
-      {id:2,name:"Liming",github:"liming",sex:"male"},
-      {id:3,name:"Xiaohong",github:"xiaohong",sex:"female"}
+      {id:1,name:"小强",sex:"男",level:"特级"},
+      {id:2,name:"小明",sex:"男",level:"初级"},
+      {id:3,name:"小张",sex:"女",level:"高级"}
     ];
   }
   addNewUser(){
     let uuid = Number(Math.random()*1000).toFixed(0);
     let newUser:User = {
       id:Number(uuid),
-      name:"Jack",
-      github:"Jack",
-      sex:"male"
+      name:"小小",
+      sex:"男",
+      level:"无"
     }
     this.users.push(newUser);
   }
